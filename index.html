@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JuzSTILS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="app-name">JuzSTILS</h1>
+
+    <!-- LOGIN -->
+    <div id="login-box">
+        <input type="text" id="login-user" placeholder="Email / Phone / Username">
+        <input type="password" id="login-pass" placeholder="Password">
+
+        <label style="font-size:12px;">
+            <input type="checkbox" id="rememberMe"> Remember Me
+        </label>
+
+        <button onclick="login()">Login</button>
+
+        <p class="forgot" onclick="forgotPassword()">Forgot Password?</p>
+
+        <p>New user? <span onclick="showSignup()">Create Account</span></p>
+
+        <p id="login-error"></p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signup-box" style="display:none;">
+        <h2>Create Account</h2>
+
+        <input type="text" id="signup-username" placeholder="Username" oninput="checkUsername()">
+        <p id="username-error" style="font-size:12px;"></p>
+
+        <input type="email" id="signup-email" placeholder="Email">
+        <input type="text" id="signup-phone" placeholder="Phone (optional)">
+
+        <input type="password" id="signup-pass" placeholder="Password">
+        <input type="password" id="signup-confirm" placeholder="Confirm Password">
+
+        <button onclick="signup()">Create Account</button>
+
+        <p>Already have account? <span onclick="showLogin()">Login</span></p>
+
+        <p id="signup-error"></p>
+    </div>
+
+    <!-- FORGOT PASSWORD -->
+    <div id="forgot-box" style="display:none;">
+        <h2>Reset Password</h2>
+
+        <input type="text" id="forgot-input" placeholder="Enter Email or Phone">
+
+        <button onclick="sendOTP()">Send OTP</button>
+
+        <p>Back to <span onclick="showLogin()">Login</span></p>
+
+        <p id="forgot-error"></p>
+    </div>
+
+    <!-- OTP -->
+    <div id="otp-box" style="display:none;">
+        <h2>Enter OTP</h2>
+
+        <input type="text" id="otp-input" placeholder="Enter OTP">
+
+        <button onclick="verifyOTP()">Verify</button>
+
+        <p id="otp-error"></p>
+    </div>
+
+    <!-- RESET PASSWORD -->
+    <div id="reset-box" style="display:none;">
+        <h2>Set New Password</h2>
+
+        <input type="password" id="new-pass" placeholder="New Password">
+        <input type="password" id="confirm-new-pass" placeholder="Confirm Password">
+
+        <button onclick="updatePassword()">Update Password</button>
+
+        <p id="reset-error"></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

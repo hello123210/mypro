@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>JuzSTILS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <h1>Welcome to JuzSTILS</h1>
+
+    <div class="cards">
+
+        <div class="card" onclick="goToQuiz()">
+            <h2>Find My Interest</h2>
+            <p>Take a quiz to discover your career path</p>
+        </div>
+
+        <div class="card" onclick="knownCareer()">
+            <h2>I Know My Career</h2>
+            <p>Get guidance for your chosen field</p>
+        </div>
+
+        <div class="card" onclick="confusedCareer()">
+            <h2>Confused Between Careers</h2>
+            <p>Compare and decide better</p>
+        </div>
+
+    </div>
+
+    <button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

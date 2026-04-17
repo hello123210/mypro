@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Career Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="careerTitle">Loading...</h1>
+    <h3 id="gradeText"></h3>
+
+    <p id="careerDetails"></p>
+
+    <button onclick="goBack()">Back</button>
+
+</div>
+
+<script>
+
+let career = localStorage.getItem("selectedCareer");
+let grade = localStorage.getItem("selectedGrade");
+
+// DEBUG
+alert("Loaded:\nCareer: " + career + "\nGrade: " + grade);
+
+if (!career || !grade) {
+    alert("Data missing!");
+    window.location.href = "career.html";
+}
+
+// SHOW DATA
+document.getElementById("careerTitle").innerText = career;
+document.getElementById("gradeText").innerText = "For Grade: " + grade;
+
+document.getElementById("careerDetails").innerText =
+    "Career roadmap for " + career + " (Grade " + grade + ")";
+
+function goBack() {
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

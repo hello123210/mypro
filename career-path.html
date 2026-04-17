@@ -1,0 +1,26 @@
+let career = localStorage.getItem("selectedCareer");
+let grade = localStorage.getItem("selectedGrade");
+
+document.getElementById("careerTitle").innerText = career;
+
+// Different roadmap based on grade
+let details = {
+    "Software Developer": {
+        "8": "Start learning basics of computers and coding (Scratch, HTML).",
+        "9": "Learn Python basics, build small projects.",
+        "10": "Choose Science with CS, improve coding skills.",
+        "11": "Focus on programming + projects.",
+        "12": "Prepare for engineering entrance exams."
+    },
+    "Doctor": {
+        "8": "Focus on science basics.",
+        "9": "Start learning biology concepts.",
+        "10": "Prepare for science stream.",
+        "11": "Take PCB and start NEET prep.",
+        "12": "Focus fully on NEET exam."
+    }
+};
+
+// Show based on grade
+document.getElementById("careerDetails").innerText =
+    details[career]?.[grade] || "Details coming soon...";
