@@ -86,6 +86,54 @@
 
 </div>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+  from "https://www.gstatic.com/firebasejs/12.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAaTJenVkqLGmnCDKJp_2YJf2Qm5vRRVk4",
+    authDomain: "career-app-5377c.firebaseapp.com",
+    projectId: "career-app-5377c",
+    storageBucket: "career-app-5377c.firebasestorage.app",
+    messagingSenderId: "821974930454",
+    appId: "1:821974930454:web:fdcde74e5e59fe2f49d137",
+    measurementId: "G-K76E93W81M"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 🔹 SIGNUP
+  window.signup = function() {
+    let email = document.getElementById("signup-email").value;
+    let password = document.getElementById("signup-pass").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Account created successfully!");
+        showLogin();
+      })
+      .catch(err => {
+        document.getElementById("signup-error").innerText = err.message;
+      });
+  }
+
+  // 🔹 LOGIN
+  window.login = function() {
+    let email = document.getElementById("login-user").value;
+    let password = document.getElementById("login-pass").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        window.location.href = "dashboard.html";
+      })
+      .catch(err => {
+        document.getElementById("login-error").innerText = err.message;
+      });
+  }
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
